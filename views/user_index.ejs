@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1><%= title %></h1>
+        <a href="/add" class="btn btn-sm btn-primary">Add User</a><br/>
+        <table class="table table-dark table-stripped">
+             <thead>
+                 <tr>
+                     <th>Id</th>
+                     <th>Name</th>
+                     <th>Email</th>
+                     <th>Phone NO.</th>
+                     <th>Action</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <% users.forEach(function(user){ %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.email %></td>
+                        <td><%= user.phone_no %></td>
+                        <td>
+                            <a href="edit/<%= user.id %>" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="delete/<%= user.id %>" class="btn btn-sm btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <% }); %>
+             </tbody>
+        </table>
+    </div>
+     
+</body>
+</html>
